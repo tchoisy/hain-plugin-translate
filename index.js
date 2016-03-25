@@ -29,18 +29,18 @@ module.exports = (pluginContext) => {
             var sourceLang = 'en';
             var targetLang = 'fr';
             var sourceText = id;
-             var url = "https://translate.googleapis.com/translate_a/t?client=t&sl=" 
+             var url = "https://translate.googleapis.com/translate_a/single?client=t&sl=" 
                     + sourceLang + "&tl=" + targetLang + "&dt=t&q=" + encodeURI(sourceText);
-  
+
             got(url)
                 .then(response => {
                     var result  = response.body;
-                    toast.enqueue(result, 4000);
+                    result = result.substr(4);
+                    toast.enqueue(result.substr(0, result.indexOf('"')), 2500);
                 })
                 .catch(error => {
-                    toast.enqueue("An error was occured", 2500);
+                    toast.enqueue("error", 2500);
                 });
-
         }else{
             return;
         }
