@@ -1,6 +1,6 @@
 {
   "name": "hain-plugin-translate",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Hain plugin to translate sentence",
   "main": "index.js",
   "repository": {
@@ -15,7 +15,7 @@
   "homepage": "https://github.com/tchoisy/hain-plugin-translate.git",
   "hain": {
     "prefix": "/translate",
-    "usage": "/translate something",
+    "usage": "/translate your sentence",
     "icon": "/icon.png",
     "redirect": "/translate "
   },
