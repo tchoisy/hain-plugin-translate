@@ -1,22 +1,25 @@
 {
-    "name": "hain-plugin-translate",
-    "version": "0.0.1",
-    "description": "Hain plugin to translate word",
-    "main": "index.js",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/k-meissonnier/hain-plugin-github.git"
-    },
-    "author": "Tommy CHOISY",
-    "license": "MIT",
-    "keywords": [
-        "hain0"
-    ],
-    "homepage": "https://github.com/k-meissonnier/hain-plugin-github.git",
-    "hain": {
-        "prefix": "/translate",
-        "usage": "/translate something",
-        "icon": "/icon.png",
-        "redirect": "/translate "
-    }
+  "name": "hain-plugin-translate",
+  "version": "0.0.1",
+  "description": "Hain plugin to translate sentence",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tchoisy/hain-plugin-translate.git"
+  },
+  "author": "Tommy CHOISY",
+  "license": "MIT",
+  "keywords": [
+    "hain0"
+  ],
+  "homepage": "https://github.com/tchoisy/hain-plugin-translate.git",
+  "hain": {
+    "prefix": "/translate",
+    "usage": "/translate something",
+    "icon": "/icon.png",
+    "redirect": "/translate "
+  },
+  "dependencies": {
+    "got": "^6.2.0"
+  }
 }
