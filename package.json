@@ -1,6 +1,6 @@
 {
   "name": "hain-plugin-translate",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Hain plugin to translate sentence",
   "main": "index.js",
   "repository": {

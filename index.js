@@ -39,18 +39,17 @@ module.exports = (pluginContext) => {
             
 
             if(sourceText != ""){
-                var url = "https://translate.googleapis.com/translate_a/single?client=t&sl=" 
-                    + sourceLang + "&tl=" + targetLang + "&dt=t&q=" + encodeURI(sourceText);
-
+                var url = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160423T154320Z.a16aa24916c8947b.612925192e37ef98dcbdf46c870ee39edd74d717&text=" +encodeURI(sourceText)+ "&lang="+sourceLang + "-" + targetLang;
+                
                 got(url)
                 .then(response => {
                     var result  = response.body;
-                    result = result.substr(4);
-                    toast.enqueue(result.substr(0, result.indexOf('"')), 2500);
+                    var data = JSON.parse(result);
+                    toast.enqueue(data.text[0], 2500);
                 })
                 .catch(error => {
                     toast.enqueue("An error has occurred", 2500);
-                    // toast.enqueue(error.response.body, 2500);
+                    toast.enqueue(error.response.body, 2500);
                 });
             }else{
                 toast.enqueue("You must write a sentence to translate", 2500);
